@@ -40,13 +40,24 @@ Main method - Will create the menu and business logic
 Car Park - will hold 15 Cars, addCar and removeCar method
 Car - will hold the details of the car, get and set method
  */
-public class Week6 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Week6 
+{
+    public static void main(String[] args) 
+    {
+        int state = 1; 
+        // Create car park object
+        CarPark capPark1 = new CarPark();
+        while(state == 1) 
+        { 
+            // Print menu
+            System.out.println("Please select one of the following options:");
+            System.out.println("A – Add a car");
+            System.out.println("B – Remove a car");
+            System.out.println("C – View number of free spaces/number of cars in the car park");
+            System.out.println("X – Quit");
+            // Get user input
+            // Perform actions based on user selection
+        }
     }
     
 }
