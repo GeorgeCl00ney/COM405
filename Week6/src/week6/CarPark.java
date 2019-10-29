@@ -4,25 +4,25 @@ package week6;
 public class CarPark {
     
 //Start with an array attribute to hold Cars
-    private Car[] cars;
+    private Car[] spaces;
     
-//Create a constructor which instantiates he array with a limit of 15 cars
+//Create a constructor which instantiates he array with a limit of 15 spaces
     public CarPark(int capacityIn)
     {
-        cars = new Car[capacityIn];
+        spaces = new Car[capacityIn];
     }
     
-//Create a method to allow cars to be added to the CarPark object
+//Create a method to allow spaces to be added to the CarPark object
     public boolean addCar(Car carIn)
     {
         //Need a loop to find an empty element in the array to put the car into
-        for(int i=0; i< cars.length; i+=1)
+        for(int i=0; i< spaces.length; i+=1)
         {
             //if the space is empty
-            if(cars[i] == null)
+            if(spaces[i] == null)
             {
                 //put the car into it
-                cars[i] = carIn;
+                spaces[i] = carIn;
                 return true;
             }
         }
@@ -31,15 +31,15 @@ public class CarPark {
     }
     
 //Similarly Create a method to remove a car from the array
-    public boolean removeCar(int carRegIn)
+    public boolean removeCar(String carRegIn)
         {
-        for(int i=0; i< cars.length; i+=1)
-            {   if(cars[i] != null) //Is there anyone in this element?
+        for(int i=0; i< spaces.length; i+=1)
+            {   if(spaces[i] != null) //Is there anyone in this element?
                 {
                     //Is this the car we are looking for?
-                    if(cars[i].getRegistration().equals(carRegIn))
+                    if(spaces[i].getRegistration().equals(carRegIn))
                     {
-                    cars[i] = null;//Set the seat to empty
+                    spaces[i] = null;//Set the seat to empty
                     return true;
                     }
                 }
@@ -53,14 +53,14 @@ public class CarPark {
         //first create a variable to hold the count as it increases...
         int numberOfCars = 0;
         //while we go through the loop and
-        for(int i=0; i<cars.length; i++)
+        for(int i=0; i<spaces.length; i++)
         {
-            if(cars[i] != null) //if the element has a car in it
+            if(spaces[i] != null) //if the element has a car in it
             {
-               numberOfCars++; //add one to the number of cars
+               numberOfCars++; //add one to the number of spaces
             }
         }
-        return numberOfCars; //return number of cars to what called the method
+        return numberOfCars; //return number of spaces to what called the method
     }
     
 //Create a method to count the Spaces in the CarPark
@@ -68,11 +68,11 @@ public class CarPark {
     {
         /*first create a variable to hold the count as it increases
         and initialise the count as the size of the CarPark*/
-        int numberOfSpaces = cars.length;
+        int numberOfSpaces = spaces.length;
         //while we go through the loop and
-        for(int i=0; i<cars.length; i++)
+        for(int i=0; i<spaces.length; i++)
         {
-            if(cars[i] != null) //if the element has a car in it
+            if(spaces[i] != null) //if the element has a car in it
             {
                numberOfSpaces--; //remove one from the number of spaces
             }

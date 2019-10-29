@@ -49,7 +49,8 @@ public class Week6
         int state = 1; 
         // Create car park object
         CarPark carPark1 = new CarPark(15);
-        
+        //create a Scanner obeject to hold the user choice (outside of loops)
+        Scanner menuChoice = new Scanner(System.in);
         // Get user input
         while(state == 1) 
         { 
@@ -59,40 +60,55 @@ public class Week6
             System.out.println("B – Remove a car");
             System.out.println("C – View number of free spaces/number of cars in the car park");
             System.out.println("X – Quit");
-            
-            //create a Scanner obeject to hold the user choice
-            Scanner menuChoice = new Scanner(System.in);
-            /*
-        Create a scanner object
-        take the data from the scanner object and place in a variable
-        */
-       
-        String userChoice = menuChoice.nextLine();
-
-        if(userChoice.equals("A"))
-        {
-            System.out.println("Choice A was made");
-        }
-        else if(userChoice.equals("B"))
-        {
-            System.out.println("Choice B was made");
-        }
-        else if(userChoice.equals("C"))
-        {
-            System.out.println("Choice C was made");
-        }
-        else if(userChoice.equals("X"))
-        {
-          System.out.println("The program will now close");
-          state = 0;
-        }
-        else if(!userChoice.equals(""))
-        {
-          System.out.println("That is not a valid choice");
-        }
-        
+            //take the data from the scanner object and place in a variable
+            String userChoice = menuChoice.nextLine();
             // Perform actions based on user selection
+            if(userChoice.toUpperCase().equals("A"))
+            {
+                System.out.println("Please enter a registration number");
+                String regIn = menuChoice.nextLine();
+                System.out.println("Please enter a colour");
+                String colourIn = menuChoice.nextLine();
+                
+                if(carPark1.addCar( new Car(regIn,colourIn)))
+                {
+                    System.out.println("A car has been added");
+                }
+                else
+                {
+                    System.out.println("Car park is full");
+                }
+            }
+            else if(userChoice.toUpperCase().equals("B"))
+            {
+                System.out.println("Please enter a registration number");
+                String regIn = menuChoice.nextLine();
+                
+                if(carPark1.removeCar(regIn))
+                {
+                    System.out.println("A car has been removed");
+                }
+                else
+                {
+                    System.out.println("Car does not exist");
+                }
+            }
+            else if(userChoice.toUpperCase().equals("C"))
+            {
+                System.out.println("Spaces available:"+ carPark1.countSpaces());
+                System.out.println("Cars present:"+ carPark1.countCars());
+            }
+            else if(userChoice.toUpperCase().equals("X"))
+            {
+              System.out.println("The program will now close");
+              state = 0;
+            }
+            else
+            {
+              System.out.println("That is not a valid choice");
+            }
         }
+        menuChoice.close(); //Close the scanner
     }
     
 }
