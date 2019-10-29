@@ -7,9 +7,9 @@ public class CarPark {
     private Car[] cars;
     
 //Create a constructor which instantiates he array with a limit of 15 cars
-    public CarPark()
+    public CarPark(int capacityIn)
     {
-        cars = new Car[15];
+        cars = new Car[capacityIn];
     }
     
 //Create a method to allow cars to be added to the CarPark object

@@ -46,7 +46,8 @@ public class Week6
     {
         int state = 1; 
         // Create car park object
-        CarPark capPark1 = new CarPark();
+        CarPark carPark1 = new CarPark(15);
+        
         while(state == 1) 
         { 
             // Print menu
