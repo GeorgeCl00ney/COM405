@@ -40,6 +40,8 @@ Main method - Will create the menu and business logic
 Car Park - will hold 15 Cars, addCar and removeCar method
 Car - will hold the details of the car, get and set method
  */
+//Import the scanner class so i can use user input
+import java.util.Scanner;
 public class Week6 
 {
     public static void main(String[] args) 
@@ -48,6 +50,7 @@ public class Week6
         // Create car park object
         CarPark carPark1 = new CarPark(15);
         
+        // Get user input
         while(state == 1) 
         { 
             // Print menu
@@ -56,7 +59,38 @@ public class Week6
             System.out.println("B – Remove a car");
             System.out.println("C – View number of free spaces/number of cars in the car park");
             System.out.println("X – Quit");
-            // Get user input
+            
+            //create a Scanner obeject to hold the user choice
+            Scanner menuChoice = new Scanner(System.in);
+            /*
+        Create a scanner object
+        take the data from the scanner object and place in a variable
+        */
+       
+        String userChoice = menuChoice.nextLine();
+
+        if(userChoice.equals("A"))
+        {
+            System.out.println("Choice A was made");
+        }
+        else if(userChoice.equals("B"))
+        {
+            System.out.println("Choice B was made");
+        }
+        else if(userChoice.equals("C"))
+        {
+            System.out.println("Choice C was made");
+        }
+        else if(userChoice.equals("X"))
+        {
+          System.out.println("The program will now close");
+          state = 0;
+        }
+        else if(!userChoice.equals(""))
+        {
+          System.out.println("That is not a valid choice");
+        }
+        
             // Perform actions based on user selection
         }
     }
