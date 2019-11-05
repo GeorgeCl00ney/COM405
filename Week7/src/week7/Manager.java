@@ -11,5 +11,22 @@ public class Manager extends Employee{
         super(nameIn,payIn,hoursIn,holidayIn);
         bonusPercent = bonusIn;
     }
+    public boolean setBonus(double bonusIn)
+    {
+        
+        if(bonusPercent <= 100 && bonusPercent >= 0)
+        {
+            bonusPercent = bonusIn;
+            return true;
+        }
+        else 
+        return false;
+    }
+    
+    @Override
+    public double getPay()
+    {
+        return payRate*bonusPercent;
+    }
     
 }

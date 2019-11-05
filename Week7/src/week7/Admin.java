@@ -30,6 +30,5 @@ public class Admin extends Employee{
     {
         return super.displayDetails(nameIn) + " Manager name: " + manager.getName();
     }
-    //sdfsdfsdf
     
 }
