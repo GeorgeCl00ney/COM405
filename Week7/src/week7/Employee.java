@@ -61,10 +61,10 @@ public class Employee {
     public String displayDetails(String nameIn)
     {
         String staffDetails = "";
-        staffDetails += "Employee name: " + getName();
-        staffDetails += "Pay rate: " + getPay();
-        staffDetails += "Weekly hours: " + getHours();
-        staffDetails += "Holiday entitlement: " + getHoliday();
+        staffDetails += "/nEmployee name: " + getName();
+        staffDetails += "/nPay rate: " + getPay();
+        staffDetails += "/nWeekly hours: " + getHours();
+        staffDetails += "/nHoliday entitlement: " + getHoliday();
         
         return staffDetails;
     }

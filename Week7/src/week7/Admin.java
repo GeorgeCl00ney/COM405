@@ -33,6 +33,7 @@ public class Admin extends Employee{
     @Override
     public String displayDetails(String nameIn)
     {
+        
         return super.displayDetails(nameIn) + " Manager name: " + manager.getName();
     }
     
