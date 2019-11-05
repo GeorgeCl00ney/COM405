@@ -5,6 +5,11 @@ public class Admin extends Employee{
     //EXTRA ATTRIBUTES
     private Manager manager;
     
+    //Add the inherited constructor
+    public Admin(String nameIn,double payIn, double hoursIn, double holidayIn)
+    {
+        super(nameIn,payIn,hoursIn,holidayIn);
+    }
     //Extend the inherited constructor
     public Admin(String nameIn,double payIn, double hoursIn, double holidayIn, Manager managerIn)
     {

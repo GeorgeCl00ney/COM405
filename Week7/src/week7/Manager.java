@@ -5,6 +5,11 @@ public class Manager extends Employee{
     //EXTRA ATTRIBUTES
     private double bonusPercent;
     
+    //Add the inherited constructor
+    public Manager(String nameIn,double payIn, double hoursIn, double holidayIn)
+    {
+        super(nameIn,payIn,hoursIn,holidayIn);
+    }
     //Extend the inherited constructor
     public Manager(String nameIn,double payIn, double hoursIn, double holidayIn, double bonusIn)
     {
@@ -26,7 +31,7 @@ public class Manager extends Employee{
     @Override
     public double getPay()
     {
-        return payRate*bonusPercent;
+        return (payRate*bonusPercent)/100;
     }
     
 }

@@ -4,7 +4,7 @@ package week7;
 
 
 public class FrontLine extends Employee{
-    //Extend the inherited constructor
+    //Add the inherited constructor
     public FrontLine(String nameIn,double payIn, double hoursIn, double holidayIn)
     {
         super(nameIn,payIn,hoursIn,holidayIn);
