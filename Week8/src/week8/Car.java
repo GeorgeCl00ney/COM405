@@ -5,6 +5,8 @@ public class Car {
     //ATTRIBUTES
     private String registration;
     private String colour;
+    private String make;
+    private String model;
     //CONSTRUCTOR
     public Car(String regIn, String colourIn)
     {
@@ -17,6 +19,14 @@ public class Car {
         return registration;
     }
     public String getColour()
+    {
+        return colour;
+    }
+    public String getMake()
+    {
+        return registration;
+    }
+    public String getModel()
     {
         return colour;
     }
