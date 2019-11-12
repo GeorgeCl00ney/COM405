@@ -8,10 +8,12 @@ public class Car {
     private String make;
     private String model;
     //CONSTRUCTOR
-    public Car(String regIn, String colourIn)
+    public Car(String regIn, String colourIn, String makeIn, String modelIn)
     {
         registration = regIn;
         colour = colourIn;
+        make = makeIn;
+        model = modelIn;
     }
     //METHODS
     public String getRegistration()
