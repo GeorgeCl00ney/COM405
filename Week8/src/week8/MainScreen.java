@@ -5,7 +5,7 @@ package week8;
 For each new item we use in the Construction of the GUI we basically:
     (i)     Import the class
     (ii)    Add the thing as an attribute
-    (iii)   Create the item in the constructor
+    (iii)   Initialise the item in the constructor
     (iv)    Use the item in a Method
 
 We can add the attribute first and NetBeans will prompt us to import the class
@@ -13,12 +13,15 @@ We can add the attribute first and NetBeans will prompt us to import the class
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class MainScreen extends JFrame implements ActionListner
+public class MainScreen extends JFrame implements ActionListener
 {
     //ATTRIBUTES
     private JLabel lblTitle;
@@ -27,17 +30,21 @@ public class MainScreen extends JFrame implements ActionListner
     private JLabel lblMake;
     private JLabel lblModel;
     private JLabel lblStatus;
-    private JTextField txtRegistration;
-    private JTextField txtColour;
-    private JTextField txtMake;
-    private JTextField txtModel;
+    private JTextField txtRegistration
+            ,txtColour
+            ,txtMake
+            ,txtModel; //Alter
     private JButton btnAdd;
     private JButton btnRemove;
     private GridBagConstraints constraints;
+    private CarPark carpark;
+    
+   
     
     //CONSTRUCTOR - and methods used in the constructor
     MainScreen()
     {
+        carpark = new CarPark(15);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridBagLayout());
         constraints = new GridBagConstraints();
@@ -46,7 +53,6 @@ public class MainScreen extends JFrame implements ActionListner
         //Create the layout
         layoutComponents();
     }
-    
     public void initComponents()
     {
         lblTitle = new JLabel("Car park console");
@@ -62,10 +68,10 @@ public class MainScreen extends JFrame implements ActionListner
         txtModel = new JTextField();
         
         btnAdd = new JButton("Add car");
+        btnAdd.addActionListener(this);
         btnRemove = new JButton("Remove car");
     }
-    
-    public void layoutComponents()
+    public void layoutComponents() //needs the contrainsts object added as an attribute first
     {
         constraints.gridx = 1;
         constraints.gridy = 1;
@@ -140,8 +146,25 @@ public class MainScreen extends JFrame implements ActionListner
         constraints.gridwidth = 2;
         constraints.gridheight = 1;
         this.add(btnRemove, constraints);
-        
     }
     
-    
+     //OVERRIDE THE ACTION PERFORMED METHOD FORM actionListner
+    public void actionPerformed(ActionEvent ev)
+    {
+        if(ev.getSource().equals(btnAdd))
+        {
+            String reg = txtRegistration.getText();
+            String colour = txtColour.getText();
+            String make = txtMake.getText();
+            String model = txtModel.getText();
+            if(carpark.addCar(new Car(reg,colour,make,model)))
+            {
+                JOptionPane.showMessageDialog(null, "Car has been added");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Car park is full");
+            }
+        }
+    }
 }
