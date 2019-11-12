@@ -68,8 +68,9 @@ public class MainScreen extends JFrame implements ActionListener
         txtModel = new JTextField();
         
         btnAdd = new JButton("Add car");
-        btnAdd.addActionListener(this);
+        btnAdd.addActionListener(this);//THIS IS IMPORTANT IT MARKS THE BUTTON AS AN ACTION!!
         btnRemove = new JButton("Remove car");
+        btnAdd.addActionListener(this);//THIS IS IMPORTANT IT MARKS THE BUTTON AS AN ACTION!!
     }
     public void layoutComponents() //needs the contrainsts object added as an attribute first
     {
@@ -160,10 +161,24 @@ public class MainScreen extends JFrame implements ActionListener
             if(carpark.addCar(new Car(reg,colour,make,model)))
             {
                 JOptionPane.showMessageDialog(null, "Car has been added");
+                lblStatus.setText("There are "+ carpark.countSpaces() + " spaces");
             }
             else
             {
                 JOptionPane.showMessageDialog(null, "Car park is full");
+            }
+        }
+        else if(ev.getSource().equals(btnRemove))
+        {
+            String reg = txtRegistration.getText();
+            if(carpark.removeCar(reg))
+            {
+                JOptionPane.showMessageDialog(null, "Car has been removed");
+                lblStatus.setText("There are "+ carpark.countSpaces() + " spaces");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Car does not exist");
             }
         }
     }
