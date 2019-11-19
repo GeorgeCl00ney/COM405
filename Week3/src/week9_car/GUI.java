@@ -2,6 +2,7 @@
 package week9_car;
 
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -36,6 +37,9 @@ public class GUI extends JFrame implements ActionListener
     GUI()
     {
         car = new Car("Wacky Racer","Creepy Coup",1968,true,666);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new GridBagLayout());
+        constraints = new GridBagConstraints();
     }
     
     

@@ -111,25 +111,4 @@ public class Car {
             fuelLevel = 100;
         }
     }
-
-//    public Car()
-//        {
-//            make = "Wacky Racer";
-//            model = "Compact Pussycat";
-//            year = 1968;
-//            isMotValid = true;
-//            currentSpeed = 0;
-//            maxSpeed = 79;
-//            refuel(100);
-//        }
-//    public Car(String modelIn, int maxSpeedIn)
-//        {
-//            make = "Wacky Racer";
-//            model = modelIn;
-//            year = 1968;
-//            isMotValid = true;
-//            currentSpeed = 0;
-//            maxSpeed = maxSpeedIn;
-//            refuel(100);
-//        }
 }
