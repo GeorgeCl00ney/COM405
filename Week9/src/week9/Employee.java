@@ -1,7 +1,7 @@
 
 package week9;
 
-public class Employee {
+public abstract class Employee {
     //ATTRIBUTES
     protected String name;
     protected double payRate;
@@ -61,10 +61,10 @@ public class Employee {
     public String displayDetails(String nameIn)
     {
         String staffDetails = "";
-        staffDetails += "/nEmployee name: " + getName();
-        staffDetails += "/nPay rate: " + getPay();
-        staffDetails += "/nWeekly hours: " + getHours();
-        staffDetails += "/nHoliday entitlement: " + getHoliday();
+        staffDetails += "\nEmployee name: " + getName();
+        staffDetails += "\nPay rate: " + getPay();
+        staffDetails += "\nWeekly hours: " + getHours();
+        staffDetails += "\nHoliday entitlement: " + getHoliday();
         
         return staffDetails;
     }

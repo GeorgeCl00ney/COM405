@@ -34,7 +34,7 @@ public class Admin extends Employee{
     public String displayDetails(String nameIn)
     {
         
-        return super.displayDetails(nameIn) + " Manager name: " + manager.getName();
+        return super.displayDetails(nameIn) + "\nManager name: " + manager.getName();
     }
     
 }
