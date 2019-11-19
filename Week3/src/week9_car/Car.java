@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package week3;
+package week9_car;
 
 /*
 Task 1 – Creating a Car Class

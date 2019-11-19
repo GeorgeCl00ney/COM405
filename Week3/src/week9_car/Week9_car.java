@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package week3;
+package week9_car;
 
 /**
  *
  * @author 4hainr84
  */
-public class Week3 {
+public class Week9_car {
 
     /**
      * @param args the command line arguments
