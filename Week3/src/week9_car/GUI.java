@@ -29,7 +29,8 @@ public class GUI extends JFrame implements ActionListener
             ,txtMaxSpeed
             ,txtFuelLevel;
     private JButton btnAccelerate
-            ,btnBrake;
+            ,btnBrake
+            ,btnRefuel;
     private GridBagConstraints constraints;
     private Car car;
     
@@ -43,7 +44,7 @@ public class GUI extends JFrame implements ActionListener
         //SET UP COMPONENTS
         initComponents();
         //Create the layout
-        //layoutComponents();
+        layoutComponents();
     }
     private void initComponents()
     {
@@ -74,6 +75,90 @@ public class GUI extends JFrame implements ActionListener
         btnAccelerate.addActionListener(this);
         btnBrake = new JButton("Brake");
         btnBrake.addActionListener(this);
+        btnRefuel = new JButton("Refuel");
+        btnRefuel.addActionListener(this);
+    }
+    private void layoutComponents()
+    {
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 4;
+        constraints.gridheight = 1;
+        this.add(lblTitle, constraints);
+        
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        this.add(lblMake, constraints);
+        
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        this.add(lblModel, constraints);
+        
+        constraints.gridy = 3;
+        constraints.gridwidth = 1;
+        this.add(lblYear, constraints);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.gridwidth = 2;
+        this.add(lblIsMOTValid, constraints);
+        
+        constraints.gridy = 5;
+        this.add(lblCurrentSpeed, constraints);
+        
+        constraints.gridy = 6;
+        this.add(lblMaxSpeed, constraints);
+        
+        constraints.gridy = 7;
+        this.add(lblFuelLevel, constraints);
+        
+        constraints.gridx = 2;
+        constraints.gridy = 1;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtMake, constraints);
+        
+        constraints.gridy = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtModel, constraints);
+       
+        constraints.gridy = 3;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtYear, constraints);
+       
+        constraints.gridy = 4;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtIsMOTValid, constraints);
+       
+        constraints.gridy = 5;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtCurrentSpeed, constraints);
+       
+        constraints.gridy = 6;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtMaxSpeed, constraints);
+       
+        constraints.gridy = 7;
+        constraints.fill = GridBagConstraints.HORIZONTAL; //Make the text box fill the width of the column
+        this.add(txtFuelLevel, constraints);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 8;
+        constraints.gridwidth = 2;
+        constraints.gridheight = 1;
+        this.add(btnAccelerate, constraints);
+        
+        constraints.gridx = 2;
+        constraints.gridy = 8;
+        constraints.gridwidth = 2;
+        constraints.gridheight = 1;
+        this.add(btnAccelerate, constraints);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 9;
+        constraints.gridwidth = 4;
+        constraints.gridheight = 1;
+        this.add(btnRefuel, constraints);
     }
     
     

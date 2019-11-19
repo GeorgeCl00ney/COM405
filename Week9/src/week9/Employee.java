@@ -23,10 +23,18 @@ public abstract class Employee {
     {
         return name;
     }
+    
+    
+    //REWRITE THIS AS AN ABSTRACT METHOD!!! 
     public double getPay()
     {
         return payRate;
     }
+    
+    
+    
+    
+    
     public double getHours()
     {
         return weeklyHours;
