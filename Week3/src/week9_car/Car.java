@@ -12,6 +12,17 @@ public class Car {
     private int maxSpeed;
     private int fuelLevel;
 
+    //NEW CONSTRUCTOR
+    public Car(String makeIn, String modelIn, int yearIn, boolean motValidIn, int maxSpeedIn)
+        {
+            make = makeIn;
+            model = modelIn;
+            year = yearIn;
+            isMotValid = motValidIn;
+            currentSpeed = 0;
+            maxSpeed = maxSpeedIn;
+            refuel(50);
+        }
 //getter methods
     public String getMake()
     {
@@ -101,24 +112,24 @@ public class Car {
         }
     }
 
-    public Car()
-        {
-            make = "Wacky Racer";
-            model = "Compact Pussycat";
-            year = 1968;
-            isMotValid = true;
-            currentSpeed = 0;
-            maxSpeed = 79;
-            refuel(100);
-        }
-    public Car(String modelIn, int maxSpeedIn)
-        {
-            make = "Wacky Racer";
-            model = modelIn;
-            year = 1968;
-            isMotValid = true;
-            currentSpeed = 0;
-            maxSpeed = maxSpeedIn;
-            refuel(100);
-        }
+//    public Car()
+//        {
+//            make = "Wacky Racer";
+//            model = "Compact Pussycat";
+//            year = 1968;
+//            isMotValid = true;
+//            currentSpeed = 0;
+//            maxSpeed = 79;
+//            refuel(100);
+//        }
+//    public Car(String modelIn, int maxSpeedIn)
+//        {
+//            make = "Wacky Racer";
+//            model = modelIn;
+//            year = 1968;
+//            isMotValid = true;
+//            currentSpeed = 0;
+//            maxSpeed = maxSpeedIn;
+//            refuel(100);
+//        }
 }
