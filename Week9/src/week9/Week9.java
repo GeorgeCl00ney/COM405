@@ -16,10 +16,6 @@ public class Week9 {
        System.out.println(bob.displayDetails(bob.getName()));
        System.out.println(carol.displayDetails(carol.getName()));
        System.out.println(david.displayDetails(david.getName()));
-        
-       
-       
-        
     }
     
 }
