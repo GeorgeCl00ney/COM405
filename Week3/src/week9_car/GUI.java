@@ -40,6 +40,40 @@ public class GUI extends JFrame implements ActionListener
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridBagLayout());
         constraints = new GridBagConstraints();
+        //SET UP COMPONENTS
+        initComponents();
+        //Create the layout
+        //layoutComponents();
+    }
+    private void initComponents()
+    {
+        lblTitle = new JLabel("Dashboard");
+        lblMake = new JLabel("Make:");
+        lblModel = new JLabel("Model");
+        lblYear = new JLabel("Year of manufacture");
+        lblIsMOTValid = new JLabel("Is MOT valid?");
+        lblCurrentSpeed = new JLabel("Current Speed");
+        lblMaxSpeed = new JLabel("Maximum speed");
+        lblFuelLevel = new JLabel("Current fuel level");
+        txtMake = new JTextField(car.getMake());
+        txtModel = new JTextField(car.getModel());
+        txtYear = new JTextField(car.getYear());
+        txtIsMOTValid = new JTextField();
+        if(car.getIsMotValid())
+        {
+            txtIsMOTValid.setText("MOT is Valid");
+        }
+        else
+        {
+            txtIsMOTValid.setText("MOT needs re-newing");
+        }
+        txtCurrentSpeed = new JTextField(car.getCurrentSpeed());
+        txtMaxSpeed = new JTextField(car.getMaxSpeed());
+        txtFuelLevel = new JTextField(car.getFuelLevel());
+        btnAccelerate = new JButton("Accelerate");
+        btnAccelerate.addActionListener(this);
+        btnBrake = new JButton("Brake");
+        btnBrake.addActionListener(this);
     }
     
     
