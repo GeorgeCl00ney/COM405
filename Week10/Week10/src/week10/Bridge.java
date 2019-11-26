@@ -4,11 +4,18 @@ package week10;
 public class Bridge 
 {
     //ATTRIBUTES
-    private int vehicleLimit = 20;
-    private double weightLimit = 300000;
+    private int vehicleLimit;    // = 20;
+    private double weightLimit;    // = 300000;
+    private Vehicle[] vehiclesInTransit;
+    
 
     //CONSTRUCTOR
-    private Vehicle[] vehiclesInTransit = new Vehicle[vehicleLimit];
+    public Bridge(int limitIn, double weightIn)
+    {
+        vehicleLimit = limitIn;
+        weightLimit = weightIn;
+        vehiclesInTransit = new Vehicle[vehicleLimit];
+    }
     
     //METHODS
     public double calcTotalWeight()
@@ -31,7 +38,7 @@ public class Bridge
             messageOut += "This Vehicle cannot be added as the Bridge will be over the weight limit.";
             return messageOut; 
         }
-        else for(int i = 0; i < vehiclesInTransit.length; i++)
+        else for(int i = 0; i < vehiclesInTransit.length; i++) ///This might be where it's broken
         {
             if(vehiclesInTransit[i] == null)
             {
