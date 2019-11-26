@@ -4,10 +4,10 @@ package week10;
 public class Car extends Vehicle
 {
     //ATTRIBUTES
-    double chargeIncrement = 0.10;
-    double chargeFloor = 5.00;
-    double weightIncrement = 100;
-    double weightFloor = 1590;
+    private double chargeIncrement = 0.10;
+    private double chargeFloor = 5.00;
+    private double weightIncrement = 100;
+    private double weightFloor = 1590;
 
     //CONSTRUCTOR
     public Car(String regIn, double weightIn) 

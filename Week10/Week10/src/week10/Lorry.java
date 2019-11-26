@@ -4,9 +4,9 @@ package week10;
 public class Lorry extends Vehicle
 {
     //ATTRIBUTES
-    double chargeIncrement = 5.00;
-    double chargeFloor = 10.00;
-    double weightFloor = 8000;
+    private double chargeIncrement = 5.00;
+    private double chargeFloor = 10.00;
+    private double weightFloor = 8000;
 
     //CONSTRUCTOR
     public Lorry(String regIn, double weightIn) 
