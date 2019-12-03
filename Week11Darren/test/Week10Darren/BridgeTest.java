@@ -69,7 +69,7 @@ public class BridgeTest {
         //Test to see if bridge reaching car limit refuses entry
         for(int i=1; i<10; i++)
         {
-            br1.addVehicle(c3);
+            assumeTrue(1==br1.addVehicle(c3));
         }
         assertEquals(-1,br1.addVehicle(c1));
         //Test to see if bridge reaching weight limit refuses entry
@@ -79,7 +79,7 @@ public class BridgeTest {
         //Test to see if bridge reaching weight limit refuses entry
         for(int i=1; i<=9; i++)
         {
-            br1.addVehicle(c4);
+            assumeTrue(1==br1.addVehicle(c4));
         }
         assertEquals(0,br1.addVehicle(c1));
     }
