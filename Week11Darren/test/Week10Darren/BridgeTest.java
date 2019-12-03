@@ -44,24 +44,22 @@ public class BridgeTest {
         c3 = new Car("qqq11 1qq",1000);
         c4 = new Car("aaa99 9aa",3000);
     }
-    
-    @After
-    public void tearDown() {
-    }
 
-    /**
-     * Test of calcTotalWeight method, of class Bridge.
-     */
+    @After
+    public void tearDown() throws Exception {
+    }
+   
+
     @Test
     public void testCalcTotalWeight() {
+        assertEquals(0,br1.calcTotalWeight());//Test weight of empty bridge
+        //NEED TO ADD test adding different types of Vehicles
         assumeTrue(1 == br1.addVehicle(c1)); //2 different ways of assuming set up has worked
         assumeThat(1,is(br1.addVehicle(c2))); //2 different ways of assuming set up has worked
         assertEquals(1234+3456,br1.calcTotalWeight());
     }
 
-    /**
-     * Test of addVehicle method, of class Bridge.
-     */
+
     @Test
     public void testAddVehicle() {
         //Basic test to add a car
@@ -74,6 +72,7 @@ public class BridgeTest {
         assertEquals(-1,br1.addVehicle(c1));
         //Test to see if bridge reaching weight limit refuses entry
     }
+    
     @Test
     public void testAddVehicleWeight() {
         //Test to see if bridge reaching weight limit refuses entry
@@ -84,14 +83,15 @@ public class BridgeTest {
         assertEquals(0,br1.addVehicle(c1));
     }
 
-    /**
-     * Test of removeVehicle method, of class Bridge.
-     */
+
     @Test
     public void testRemoveVehicle() {
         //Test to see if trying to remove a car that is not on the bridge fails
         assertFalse(br1.removeVehicle("asd"));
         assumeTrue(1 == br1.addVehicle(c1));
+        //Test again to see if trying to remove a car that is not on the bridge fails
+        assertFalse(br1.removeVehicle("asd"));
+        
         //Test to see if trying to remove a car that is on the bridge works
         assertTrue(br1.removeVehicle("asd12 2sd"));
     }

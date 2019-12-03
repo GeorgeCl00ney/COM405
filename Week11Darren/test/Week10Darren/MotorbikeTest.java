@@ -18,37 +18,21 @@ import static org.junit.Assert.*;
  */
 public class MotorbikeTest {
     
+    Motorbike m1;
+    
     public MotorbikeTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
     @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+    public void setUpClass() 
+    {
+        m1 = new Motorbike("mm11 1m",500);
     }
 
-    /**
-     * Test of calcFee method, of class Motorbike.
-     */
+  
     @Test
     public void testCalcFee() {
-        System.out.println("calcFee");
-        Motorbike instance = null;
-        double expResult = 0.0;
-        double result = instance.calcFee();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(3.0, m1.calcFee(),0.001);
     }
     
 }
