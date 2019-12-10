@@ -47,7 +47,7 @@ public class Bridge
         {
             if(v1.getReg().equals(reg))
             {
-                v1 = null;
+                onBridge.remove(v1);
                 return true;
             }
         }

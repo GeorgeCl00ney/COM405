@@ -56,6 +56,7 @@ public class MainScreen extends JFrame implements ActionListener{
         btnAdd = new JButton("Add");
         btnAdd.addActionListener(this);
         btnRemove = new JButton("Remove");
+        btnRemove.addActionListener(this);
     }
 
     private void layoutComps() {
@@ -140,6 +141,13 @@ public class MainScreen extends JFrame implements ActionListener{
             {
                 lblStatus.setText("Denied");
             }
+        }
+        if(e.getSource().equals(btnRemove))
+        {
+            String reg = txtReg.getText();
+            br.removeVehicle(reg);
+            lblLoad.setText(br.calcTotalWeight() + "kg");
+            lblFee.setText("£0.00");
         }
     }
                             
